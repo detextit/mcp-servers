@@ -14,7 +14,7 @@ const WEB_SEARCH_TOOL: Tool = {
     "Performs a web search using the Brave Search API, ideal for general queries, news, articles, and online content. " +
     "Use this for broad information gathering, recent events, or when you need diverse web sources. " +
     "Supports pagination, content filtering, and freshness controls. " +
-    "Maximum 20 results per request, with offset for pagination. ",
+    "Maximum 5 results per request, with offset for pagination. ",
   inputSchema: {
     type: "object",
     properties: {
@@ -24,8 +24,8 @@ const WEB_SEARCH_TOOL: Tool = {
       },
       count: {
         type: "number",
-        description: "Number of results (1-20, default 10)",
-        default: 10
+        description: "Number of results (1-5, default 2)",
+        default: 2
       },
       offset: {
         type: "number",
@@ -57,8 +57,8 @@ const LOCAL_SEARCH_TOOL: Tool = {
       },
       count: {
         type: "number",
-        description: "Number of results (1-20, default 5)",
-        default: 5
+        description: "Number of results (1-5, default 2)",
+        default: 2
       },
     },
     required: ["query"]
